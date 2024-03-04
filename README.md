@@ -9,7 +9,7 @@ Add how to's link in the parenthesis above and delete this line
 - [Oracle Brand Cloud Architecture Icon Collection](Oracle_Brand_Cloud_Architecture_Icon_Collection.pptx)
 - [OCI Graphics for Topologies and Diagrams](https://docs.oracle.com/en-us/iaas/Content/General/Reference/graphicsfordiagrams.htm)
 
-## Prerequisite for Code Innovate 
+## Prerequisite for Hackathon
 
 ## Use Case - Add Use Case Details Here
 

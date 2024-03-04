@@ -1,9 +1,9 @@
 # Mastermind Hackathon
 
-This github repository will serve as your central location for your team to Ideate, collaborate and document your progress during the Code Innovate event. Please review the information below in order to get a better understanding of how we will leverage github during our event.  
+This GitHub repository will serve as your central location for your team to Ideate, collaborate and document your progress during the Mastermind Hackathon. Please review the information below to get a better understanding of how we will leverage GitHub during our event.  
 
 ## [Click here for How To's](howtosEdit.md)
-Add how to's link in the paranthesis above and delete this line
+Add how to's link in the parenthesis above and delete this line
 
 ## Lightning Talks Content
 - [Oracle Brand Cloud Architecture Icon Collection](Oracle_Brand_Cloud_Architecture_Icon_Collection.pptx)

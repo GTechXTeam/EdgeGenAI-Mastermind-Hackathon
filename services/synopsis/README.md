@@ -7,19 +7,19 @@ This tool demonstrates how to use the AI at the edge for raw data to natural lan
 graph TD
     subgraph Edge AI Service
     EdgeInput[Edge Input] --> PromptInputModule[Process Edge Input]
-    PromptInputModule -->|Raw Data Input| MultiModalAPI
-    MultiModalAPI[Cohere/GPT/LLaMa2/Mistral/Claude API] --> ResponseProcessingModule[Process API Response]
+    PromptInputModule -->|Raw Data Input| Grok 
+    Grok [Cohere/GPT/LLaMa2/Mistral/Claude API] --> ResponseProcessingModule[Process API Response]
     ResponseProcessingModule --> OutputModule[Generate Synopsis]
     OutputModule --> EdgeOutput[Edge Output]
     
     %% Back and forth data flow for feedback or iterative refinement
-    MultiModalAPI -->|Request/Response| PromptInputModule
+    Grok  -->|Request/Response| PromptInputModule
     ResponseProcessingModule -->|Refined Data| PromptInputModule
     end
 
     %% Additional description for Multi-Modal API interaction
-    class MultiModalAPI multiModalAPIStyle;
-    classDef multiModalAPIStyle fill:#f9f,stroke:#333,stroke-width:2px;
+    class Grok  Grok Style;
+    classDef Grok Style fill:#f9f,stroke:#333,stroke-width:2px;
 ```
 
 **How It Works**
@@ -31,8 +31,8 @@ graph TD
 **File Structure**
 ```
 edge-ai-service/
-├── models (POTENTIAL)/
-│   └── cohere.edge.bin (or similar model file)
+├── models
+│   └── grok.edge.bin
 ├── pkg/
 │   └── synopsis/service.go
 ├── pkg/

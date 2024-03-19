@@ -1,4 +1,4 @@
-# EdgeAI Synopsis
+# GenEdgeAI Synopsis
 *Build a Oracle agnostic edge AI assistant for multi-modal raw signals intelligence capture.*
 
 ## Use Case

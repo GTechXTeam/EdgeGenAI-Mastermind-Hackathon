@@ -1,0 +1,67 @@
+- name: Configure Firewall and DNS
+  hosts: firewall, dns
+  become: true
+
+  roles:
+    - firewall
+    - dns
+
+- role:
+  name: firewall
+  tasks:
+    - name: Install and enable firewalld
+      package:
+        name: firewalld
+        state: present
+      service:
+        name: firewalld
+        enabled: yes
+        state: started
+
+    - name: Allow SSH access
+      firewalld:
+        service: ssh
+        permanent: yes
+        state: enabled
+
+    - name: Enable DNS service
+      firewalld:
+        service: dns
+        permanent: yes
+        state: enabled
+
+    - name: Reload firewall
+      command: firewall-cmd --reload
+
+- role:
+  name: dns
+  tasks:
+    - name: Install bind package
+      package:
+        name: bind
+        state: present
+      notify:
+        - restart bind
+
+    - name: Configure bind
+      template:
+        src: named.conf.local.j2
+        dest: /etc/bind/named.conf.local
+      notify:
+        - restart bind
+
+    - name: Create DNS zone file
+      file:
+        path: /etc/bind/zones/example.com.db
+        state: touch
+        mode: 0644
+        owner: root
+        group: root
+      notify:
+        - restart bind
+
+  handlers:
+    - name: restart bind
+      service:
+        name: bind
+        state: restarted
